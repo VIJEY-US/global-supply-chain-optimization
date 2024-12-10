@@ -1,0 +1,6 @@
+Date,Location,Product,Quantity,Status,DeliveryTime
+2024-12-01,New York,Product A,100,Delivered,2
+2024-12-01,Los Angeles,Product B,200,Pending,3
+2024-12-01,Chicago,Product C,150,Delivered,1
+2024-12-02,New York,Product D,50,Delivered,4
+2024-12-02,Houston,Product E,120,Pending,5

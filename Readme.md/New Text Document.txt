@@ -1,0 +1,12 @@
+# Global Supply Chain Optimization with AI and Cloud
+
+## Overview
+This project optimizes global supply chains using AI-driven predictive analytics and real-time data processing. It leverages AWS services and Tableau for insights and automation, resulting in improved delivery timelines and reduced inventory costs.
+
+## Features
+- **Real-Time Data Processing**: AWS Kinesis and Lambda handle live data streams.
+- **Predictive Analytics**: AI models implemented in Python using SageMaker.
+- **Automated Infrastructure**: Terraform and CloudFormation for scalable setup.
+- **Data Visualization**: Tableau dashboards for actionable insights.
+
+

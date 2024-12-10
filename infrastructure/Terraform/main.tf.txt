@@ -1,0 +1,9 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_kinesis_stream" "supply_chain_stream" {
+  name             = "SupplyChainStream"
+  shard_count      = 1
+  retention_period = 24
+}

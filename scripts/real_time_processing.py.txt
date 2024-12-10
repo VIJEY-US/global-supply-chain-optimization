@@ -1,0 +1,32 @@
+import boto3
+import json
+
+# Initialize Kinesis client
+kinesis_client = boto3.client('kinesis', region_name='us-east-1')
+
+# Simulated real-time data stream
+def stream_data(file_path, stream_name):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()[1:]  # Skip header
+        for line in lines:
+            # Convert CSV line to JSON
+            data = line.strip().split(',')
+            payload = {
+                "Date": data[0],
+                "Location": data[1],
+                "Product": data[2],
+                "Quantity": int(data[3]),
+                "Status": data[4],
+                "DeliveryTime": int(data[5])
+            }
+            # Send data to Kinesis stream
+            response = kinesis_client.put_record(
+                StreamName=stream_name,
+                Data=json.dumps(payload),
+                PartitionKey="partition_key"
+            )
+            print(f"Sent record to Kinesis: {response}")
+
+# Call the function
+if __name__ == "__main__":
+    stream_data('data/sample_data.csv', 'SupplyChainStream')
